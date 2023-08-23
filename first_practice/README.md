@@ -1,18 +1,25 @@
-## Getting Started
+## dokcer 起動方法
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+// dockerビルド
+% docker-compose build
 
-## Folder Structure
+// dockerをバックグラウンドで起動
+% docker-compose up -d
 
-The workspace contains two folders by default, where:
+// 確認
+% docker-compose ps
+       Name          Command   State           Ports
+-------------------------------------------------------------
+java-spring_java_1   jshell    Up      0.0.0.0:8080->8080/tcp
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+## コンパイルと起動方法
+// インスペクション
+% docker-compose exec java bash
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+// コンパイル
+root@5b7be900c329:/usr/src# javac Main.java
 
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+// 実行
+root@5b7be900c329:/usr/src# java Main
+Hello World!
